@@ -56,11 +56,11 @@ export default function Header() {
   const getLogoPath = () => {
     switch (scrollState) {
       case 'past-hero':
-        return '/logo/appservice_naranja_blanco-removebg.png'; // Logo con color
+        return '/logo/appservice_blanco-removebg.png'; // Logo con color
       case 'scrolled':
       case 'top':
       default:
-        return '/logo/appservice_naranaja_negro-removebg.png'; // Logo blanco
+        return '/logo/appservice_naranaja-removebg.png'; // Logo blanco
     }
   };
 
