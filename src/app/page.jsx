@@ -5,64 +5,10 @@ import { motion } from 'framer-motion';
 import Servicios from './servicios/page';
 import Nosotros from './nosotros/page';
 import Avance from './avance/page';
+import Ia from './ia/page';
 import Contacto from './contacto/page';
 import { IoIosArrowForward } from "react-icons/io";
-import { useState, useEffect } from 'react';
 
-const Data = [
-  {
-    id: 1,
-    number: 100,
-    title: 'Clientes Satisfechos'
-  },
-  {
-    id: 2,
-    number: 24,
-    title: 'Horas Ahorradas Semanales'
-  },
-  {
-    id: 3,
-    number: 99,
-    title: 'Tareas Automatizadas'
-  },
-  {
-    id: 4,
-    number: 100,
-    title: 'Operaciones Supervisadas'
-  }
-];
-
-const AnimatedCounter = ({ target, duration = 2000 }) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const end = target;
-    const increment = end / (duration / 16);
-
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.ceil(start));
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [target, duration]);
-
-  return (
-    <motion.span
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      {count}
-    </motion.span>
-  );
-};
 
 export default function Home() {
   return (
@@ -85,7 +31,7 @@ export default function Home() {
         </div>
 
         {/* Contenido principal */}
-        <div className="absolute inset-x-0 bottom-0 h-2/3 lg:h-3/4 flex flex-col lg:flex-row items-center justify-center lg:justify-around px-4 lg:px-12 py-8 lg:py-16">
+        <div className="absolute inset-x-0 bottom-0 h-2/3 lg:h-3/4 flex flex-col lg:flex-row items-center justify-center lg:justify-start px-4 lg:px-12 py-8 lg:py-16">
 
           {/* Texto principal */}
           <div className="max-w-xl sm:max-w-2xl text-center lg:text-left text-white mb-8 lg:mb-0 lg:self-end">
@@ -133,45 +79,17 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <button className="group inline-flex items-center gap-3 px-6 py-4 bg-default-500 hover:bg-default-600 text-white font-semibold rounded-lg transition-all duration-300 hover:gap-4 hover:shadow-lg hover:shadow-default-500/25">
-                <span className="text-lg">Solicitar Demo Gratis</span>
+                <span className="text-lg">Analizar mi empresa gratis</span>
                 <IoIosArrowForward className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110" />
               </button>
               
               <button className="group inline-flex items-center gap-3 px-6 py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 hover:gap-4">
-                <span className="text-lg">Ver Video Explicativo</span>
+                <span className="text-lg">Ver cómo funciona en 2 minutos</span>
               </button>
             </motion.div>
           </div>
 
-          {/* Estadísticas */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 }}
-            className="grid grid-cols-2 gap-4 sm:gap-6 max-w-md w-full lg:w-auto"
-          >
-            {Data.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + (index * 0.1) }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/10 backdrop-blur-sm border cursor-pointer border-white/20 rounded-xl p-4 lg:p-6 text-center hover:bg-white/15 transition-all duration-300"
-              >
-                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
-                  <AnimatedCounter
-                    target={item.number}
-                    duration={2000 + (index * 500)}
-                  />
-                  {item.id === 2 ? 'h' : item.id === 4 ? '%' : '+'}
-                </div>
-                <div className="text-xs md:text-sm lg:text-base text-gray-300">
-                  {item.title}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+
         </div>
 
         {/* Scroll indicator */}
@@ -193,6 +111,7 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+      <Ia/>
       <Nosotros />
       <Servicios />
       <Avance />
