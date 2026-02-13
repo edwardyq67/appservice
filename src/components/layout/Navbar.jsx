@@ -90,7 +90,7 @@ export default function Header() {
   const getMobileButtonColor = () => {
     switch (scrollState) {
       case 'past-hero':
-        return 'text-gray-700 hover:bg-gray-100';
+        return 'text-white hover:bg-white/20';
       case 'scrolled':
       case 'top':
       default:

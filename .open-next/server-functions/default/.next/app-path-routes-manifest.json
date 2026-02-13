@@ -1,10 +1,10 @@
 {
-  "/page": "/",
-  "/servicios/page": "/servicios",
-  "/favicon.ico/route": "/favicon.ico",
   "/_not-found/page": "/_not-found",
-  "/avance/page": "/avance",
+  "/favicon.ico/route": "/favicon.ico",
   "/nosotros/page": "/nosotros",
   "/pregunta/page": "/pregunta",
-  "/contacto/page": "/contacto"
+  "/servicios/page": "/servicios",
+  "/contacto/page": "/contacto",
+  "/page": "/",
+  "/avance/page": "/avance"
 }
