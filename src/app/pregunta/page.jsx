@@ -1,18 +1,17 @@
 'use client';
 
 import React from 'react'
-import Image from 'next/image'
 import { IoIosArrowForward } from "react-icons/io";
 import { motion } from 'framer-motion';
 
 function Page() {
   return (
     <section id='Pregunta' className="relative min-h-screen bg-white overflow-hidden flex items-center py-12 md:py-20">
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 ">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
-          
+
           {/* Texto izquierda - PRIMERO en orden */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -33,7 +32,7 @@ function Page() {
             </motion.div>
 
             {/* Título principal */}
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -41,7 +40,7 @@ function Page() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900"
             >
               Descubre cómo{' '}
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -49,13 +48,6 @@ function Page() {
                 className="text-default-600 relative inline-block"
               >
                 AppService
-                <motion.span
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "100%" }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ delay: 1, duration: 0.8 }}
-                  className="absolute -bottom-2 left-0 h-1 bg-default-500/50 rounded-full"
-                />
               </motion.span>{' '}
               <br className="hidden lg:block" />
               optimiza tu operación
@@ -69,7 +61,7 @@ function Page() {
               transition={{ delay: 0.6 }}
               className="text-base md:text-lg lg:text-xl text-gray-600 max-w-xl leading-relaxed"
             >
-              Cuéntanos a qué se dedica tu empresa y descubre cómo digitalizar 
+              Cuéntanos a qué se dedica tu empresa y descubre cómo digitalizar
               tu gestión en campo y oficina de manera sencilla y efectiva.
             </motion.p>
 
@@ -84,7 +76,7 @@ function Page() {
               <label className="text-xs md:text-sm font-medium text-gray-700 block">
                 Describe tu empresa <span className="text-default-600">*</span>
               </label>
-              <textarea 
+              <textarea
                 placeholder="Ejemplo: Somos una empresa de mantenimiento industrial con 25 técnicos que trabajan en diferentes plantas"
                 className="w-full px-4 md:px-6 py-3 md:py-5 bg-white border border-gray-200 rounded-xl 
                          text-gray-900 placeholder-gray-400 focus:outline-none focus:border-default-500 
@@ -145,20 +137,18 @@ function Page() {
                 transition={{ delay: 1, duration: 0.8, type: "spring" }}
                 className="absolute -bottom-5 md:-bottom-10 -right-5 md:-right-10 w-32 md:w-64 h-32 md:h-64 bg-blue-500/10 rounded-full blur-3xl"
               />
-              
-              {/* Imagen principal con flotación - AHORA SÍ RESPONSIVE */}
+
+              {/* Imagen principal con flotación usando img normal */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
                 className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px]"
               >
-                <Image
-                  src="/mascota/ia mascota.png"
+                <img
+                  src="https://smartfrost.s3.us-east-1.amazonaws.com/planos+3d/FONBIEPOL+3D+PISO+1.png"
                   alt="Asistente virtual"
-                  fill
-                  className="object-contain drop-shadow-2xl"
-                  sizes="(max-width: 640px) 250px, (max-width: 768px) 300px, (max-width: 1024px) 400px, 450px"
-                  priority
+                  className="w-full h-full object-contain drop-shadow-2xl"
+                  loading="eager"
                 />
               </motion.div>
             </div>
