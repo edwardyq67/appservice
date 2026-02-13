@@ -32,7 +32,7 @@ function Page() {
   ];
 
   return (
-    <section id='Nosotros' className="py-16 bg-white">
+    <section id='Nosotros' className="py-16 bg-black">
       <div className="container mx-auto px-4">
         {/* Carrusel de marcas */}
         <motion.div

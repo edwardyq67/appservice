@@ -13,9 +13,9 @@ export default function Header() {
 
   const menuItems = [
     { name: 'INICIO', href: pathname === '/' ? '#Inicio' : '/#Inicio' },
-    { name: 'NOSOTROS', href: pathname === '/' ? '#Nosotros' : '/#Nosotros' },
+    { name: 'PREGUNTA', href: pathname === '/' ? '#Pregunta' : '/#Pregunta' },
     { name: 'FUNCIONALIDADES', href: pathname === '/' ? '#Funcionalidades' : '/#Funcionalidades' },
-    { name: 'CLIENTES', href: pathname === '/' ? '#Clientes' : '/#Clientes' }
+    { name: 'SECTOR', href: pathname === '/' ? '#Sector' : '/#Sector' }
   ];
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function Header() {
   const getHeaderClasses = () => {
     switch (scrollState) {
       case 'past-hero':
-        return 'bg-white/95 backdrop-blur-md shadow-lg h-[70px]';
+        return 'bg-black h-[80px]';
       case 'scrolled':
         return 'bg-black h-[80px]';
       case 'top':
@@ -56,7 +56,7 @@ export default function Header() {
   const getLogoPath = () => {
     switch (scrollState) {
       case 'past-hero':
-        return '/logo/appservice_blanco-removebg.png'; // Logo con color
+        return '/logo/appservice_naranaja-removebg.png'; // Logo con color
       case 'scrolled':
       case 'top':
       default:
@@ -69,8 +69,8 @@ export default function Header() {
     switch (scrollState) {
       case 'past-hero':
         return {
-          text: 'text-gray-700 hover:text-default-600',
-          underline: 'bg-default-600'
+          text: 'text-white hover:text-default-200',
+          underline: 'bg-white'
         };
       case 'scrolled':
         return {

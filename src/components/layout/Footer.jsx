@@ -1,17 +1,17 @@
 // components/Footer/Footer.jsx
 "use client";
-
+import { FaWhatsapp } from 'react-icons/fa';
 import Link from 'next/link';
 import { FiMapPin, FiPhone, FiMail, FiClock, FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from 'react-icons/fi';
-
+import { motion } from 'framer-motion';
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
     { name: 'Inicio', href: '/#Inicio' },
-    { name: 'Nosotros', href: '/#Nosotros' },
-    { name: 'Servicios', href: '/#Servicios' },
-    { name: 'Estrategia', href: '/#Estrategia' },
+    { name: 'Pregunta', href: '/#Pregunta' },
+    { name: 'Funcionalidades', href: '/#Funcionalidades' },
+    { name: 'Sector', href: '/#Sector' },
     { name: 'Política de Privacidad', href: '/privacidad' },
     { name: 'Términos y Condiciones', href: '/terminos' },
   ];
@@ -64,7 +64,7 @@ export default function Footer() {
               <div className="p-2 rounded-lg">
                 <div className="relative h-12 w-auto"> {/* Cambiado de h-8 w-8 a h-12 w-auto */}
                   <img
-                    src="/logo/appservice_naranaja_negro-removebg.png"
+                    src="/logo/appservice_naranaja-removebg.png"
                     alt="Logo Inversiones Bienestar"
                     className="object-contain h-full w-full min-w-[120px]" /* Agregado min-w-[120px] */
                   />
@@ -190,6 +190,36 @@ export default function Footer() {
         </div>
 
       </div>
+   <motion.div
+  initial={{ scale: 0, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ delay: 1, type: "spring" }}
+  className="fixed bottom-6 right-6 z-50"
+>
+  <a
+    href="https://wa.me/51917835815?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20de%20AppServices"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:scale-110 relative group"
+  >
+    <FaWhatsapp className="w-8 h-8 text-white" />
+
+    {/* Mensaje flotante */}
+    <span className="absolute right-20 bg-primary-500 text-white text-sm px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-lg">
+      ¿Dudas? ¡Escríbenos!
+    </span>
+
+    {/* Badge de "Online" con parpadeo llamativo */}
+    <span className="absolute -top-1 -right-1">
+      <span className="relative flex h-4 w-4">
+        {/* Círculo de onda expansiva (efecto radar) */}
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+        {/* Círculo central fijo */}
+        <span className="relative inline-flex rounded-full h-4 w-4 bg-green-500 border-2 border-white"></span>
+      </span>
+    </span>
+  </a>
+</motion.div>
     </footer>
   );
 }

@@ -5,10 +5,9 @@ import { motion } from 'framer-motion';
 import Servicios from './servicios/page';
 import Nosotros from './nosotros/page';
 import Avance from './avance/page';
-import Ia from './ia/page';
+import Pregunta from './pregunta/page';
 import Contacto from './contacto/page';
 import { IoIosArrowForward } from "react-icons/io";
-
 
 export default function Home() {
   return (
@@ -78,12 +77,12 @@ export default function Home() {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <button className="group inline-flex items-center gap-3 px-6 py-4 bg-default-500 hover:bg-default-600 text-white font-semibold rounded-lg transition-all duration-300 hover:gap-4 hover:shadow-lg hover:shadow-default-500/25">
+              <a href='#Pregunta' className="group cursor-pointer inline-flex items-center gap-3 px-6 py-4 bg-default-500 hover:bg-default-600 text-white font-semibold rounded-lg transition-all duration-300 hover:gap-4 hover:shadow-lg hover:shadow-default-500/25">
                 <span className="text-lg">Analizar mi empresa gratis</span>
                 <IoIosArrowForward className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110" />
-              </button>
+              </a>
               
-              <button className="group inline-flex items-center gap-3 px-6 py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 hover:gap-4">
+              <button className="group cursor-pointer inline-flex items-center gap-3 px-6 py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 hover:gap-4">
                 <span className="text-lg">Ver cómo funciona en 2 minutos</span>
               </button>
             </motion.div>
@@ -111,8 +110,7 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-      <Ia/>
-      <Nosotros />
+      <Pregunta/>
       <Servicios />
       <Avance />
       {/*<Contacto/>*/}
