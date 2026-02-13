@@ -68,6 +68,12 @@
       "namedRegex": "^/nosotros(?:/)?$"
     },
     {
+      "page": "/pregunta",
+      "regex": "^/pregunta(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pregunta(?:/)?$"
+    },
+    {
       "page": "/servicios",
       "regex": "^/servicios(?:/)?$",
       "routeKeys": {},

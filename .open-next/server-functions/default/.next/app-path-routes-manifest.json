@@ -1,9 +1,10 @@
 {
-  "/_not-found/page": "/_not-found",
-  "/favicon.ico/route": "/favicon.ico",
-  "/avance/page": "/avance",
-  "/servicios/page": "/servicios",
-  "/contacto/page": "/contacto",
   "/page": "/",
-  "/nosotros/page": "/nosotros"
+  "/servicios/page": "/servicios",
+  "/favicon.ico/route": "/favicon.ico",
+  "/_not-found/page": "/_not-found",
+  "/avance/page": "/avance",
+  "/nosotros/page": "/nosotros",
+  "/pregunta/page": "/pregunta",
+  "/contacto/page": "/contacto"
 }
