@@ -7,8 +7,8 @@ import { motion } from 'framer-motion';
 function Page() {
   return (
     <section id='Pregunta' className="relative min-h-screen bg-white overflow-hidden flex items-center py-12 md:py-20">
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+      <div className="container mx-auto relative z-10">
+        <div className="flex flex-col  lg:flex-row items-center justify-between gap-8 lg:gap-16">
 
           {/* Texto izquierda - PRIMERO en orden */}
           <motion.div
@@ -45,7 +45,7 @@ function Page() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-                className="text-default-600 relative inline-block"
+                className="text-default-500 relative inline-block"
               >
                 AppService
               </motion.span>{' '}
@@ -121,7 +121,7 @@ function Page() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex-1 relative"
           >
-            <div className="relative w-full flex justify-center items-center">
+            <div className="relative w-full flex  md:justify-end items-center ">
               {/* Círculos decorativos detrás de la imagen - modo claro */}
               <motion.div
                 initial={{ scale: 0 }}
@@ -152,15 +152,29 @@ function Page() {
                 />
               </motion.div>
             </div>
-
             {/* Badge flotante - modo claro */}
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: 1.2, type: "spring" }}
-              className="absolute -bottom-2 md:-bottom-5 -left-2 md:-left-5 bg-gradient-to-r from-default-600 to-blue-600 
-                       text-white px-3 md:px-6 py-1.5 md:py-3 rounded-xl md:rounded-2xl shadow-2xl"
+              animate={{
+                y: [0, -8, 0],
+                opacity: 1,
+                scale: 1
+              }}
+              transition={{
+                // Transición combinada
+                type: "spring",
+                delay: 1.2,
+                y: {
+                  repeat: Infinity,
+                  duration: 2,
+                  ease: "easeInOut",
+                  delay: 1.5
+                }
+              }}
+              className="absolute -bottom-2 md:-bottom-5 -left-2 md:left-25 bg-default-500 
+           text-white px-3 md:px-6 py-1.5 md:py-3 rounded-xl md:rounded-2xl shadow-2xl"
             >
               <p className="font-bold text-sm md:text-lg">+15 empresas</p>
               <p className="text-xs md:text-sm opacity-90 hidden md:block">ya optimizaron su operación</p>

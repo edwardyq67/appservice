@@ -102,7 +102,7 @@ export default function Header() {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${getHeaderClasses()}`}
     >
-      <div className="container mx-auto px-4 h-full">
+      <div className=" px-4 lg:px-10 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo - Cambia según scroll */}
           <Link href="/" className="flex items-center">
